@@ -6,70 +6,57 @@ exports.handler = async function(event) {
   let data;
   try {
     data = JSON.parse(event.body);
-  } catch {
+  } catch (e) {
+    console.error('JSON parse error:', e);
     return { statusCode: 400, body: 'Invalid JSON' };
   }
 
   const email = (data.email || '').trim();
   if (!email || !email.includes('@')) {
+    console.error('Invalid email:', email);
     return { statusCode: 400, body: JSON.stringify({ error: 'Invalid email' }) };
   }
 
-  const BEEHIIV_API_KEY   = process.env.BEEHIIV_API_KEY;
-  const BEEHIIV_PUB_ID    = process.env.BEEHIIV_PUB_ID;
+  const BEEHIIV_API_KEY = process.env.BEEHIIV_API_KEY;
+  const BEEHIIV_PUB_ID  = process.env.BEEHIIV_PUB_ID;
+
+  console.log('API key present:', !!BEEHIIV_API_KEY);
+  console.log('Pub ID present:', !!BEEHIIV_PUB_ID);
+  console.log('Pub ID value:', BEEHIIV_PUB_ID);
+  console.log('Submitting email:', email);
 
   if (!BEEHIIV_API_KEY || !BEEHIIV_PUB_ID) {
-    console.error('Missing Beehiiv environment variables');
+    console.error('Missing environment variables');
     return { statusCode: 500, body: 'Server configuration error' };
-  }
-
-  // Build custom fields from form data
-  const customFields = [];
-  if (data.question) {
-    customFields.push({ name: 'Health Question', value: data.question });
-  }
-  if (data.topics && data.topics.length) {
-    customFields.push({ name: 'Topics', value: data.topics.join(', ') });
-  }
-  if (data.hcp) {
-    customFields.push({ name: 'Works with OB-GYN', value: data.hcp });
-  }
-  if (data.age) {
-    customFields.push({ name: 'Age Range', value: data.age });
-  }
-  if (data.location) {
-    customFields.push({ name: 'Location', value: data.location });
   }
 
   const payload = {
     email,
-    reactivate_existing: false,
-    send_welcome_email: true,
-    utm_source: 'landing_page',
-    utm_medium: 'waitlist_form',
-    custom_fields: customFields
+    reactivate_existing: true,
+    send_welcome_email: false
   };
 
   try {
-    const response = await fetch(
-      `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUB_ID}/subscriptions`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${BEEHIIV_API_KEY}`
-        },
-        body: JSON.stringify(payload)
-      }
-    );
+    const url = `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUB_ID}/subscriptions`;
+    console.log('Calling URL:', url);
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${BEEHIIV_API_KEY}`
+      },
+      body: JSON.stringify(payload)
+    });
 
     const result = await response.json();
+    console.log('Beehiiv status:', response.status);
+    console.log('Beehiiv response:', JSON.stringify(result));
 
     if (!response.ok) {
-      console.error('Beehiiv error:', result);
       return {
         statusCode: response.status,
-        body: JSON.stringify({ error: 'Subscription failed' })
+        body: JSON.stringify({ error: 'Subscription failed', detail: result })
       };
     }
 
@@ -79,7 +66,7 @@ exports.handler = async function(event) {
     };
 
   } catch (err) {
-    console.error('Function error:', err);
-    return { statusCode: 500, body: JSON.stringify({ error: 'Server error' }) };
+    console.error('Fetch error:', err);
+    return { statusCode: 500, body: JSON.stringify({ error: err.message }) };
   }
 };
