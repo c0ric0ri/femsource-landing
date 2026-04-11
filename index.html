@@ -855,7 +855,7 @@
       location: locationEl ? locationEl.value : ''
     };
 
-    fetch('/api/subscribe', {
+    fetch('/.netlify/functions/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
