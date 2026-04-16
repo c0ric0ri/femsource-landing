@@ -218,17 +218,15 @@
     .s-green { background: var(--sage); }
     .s-amber { background: #C8893A; }
 
-    .tldr-box { background: var(--sage-bg); border-radius: 10px; padding: 1.1rem 1.25rem; margin-bottom: 1.5rem; border-left: 3px solid var(--sage); }
-    .tldr-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sage); margin-bottom: 0.4rem; }
-    .tldr-text  { font-size: 0.88rem; line-height: 1.72; color: var(--ink-mid); font-weight: 400; font-family: 'Figtree', sans-serif; }
+    .why-matters-box { background: var(--sage-bg); border-radius: 10px; padding: 1.1rem 1.25rem; margin-bottom: 1.5rem; border-left: 3px solid var(--sage); }
+    .why-matters-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sage); margin-bottom: 0.4rem; }
+    .why-matters-text { font-size: 0.88rem; line-height: 1.72; color: var(--ink-mid); font-weight: 400; font-family: 'Figtree', sans-serif; }
 
-    .translation-table { width: 100%; border-collapse: collapse; font-size: 0.76rem; }
-    .translation-table th { text-align: left; padding: 0.5rem 0.85rem; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); font-weight: 600; border-bottom: 0.5px solid var(--border); font-family: 'DM Mono', monospace; }
-    .translation-table td { padding: 0.65rem 0.85rem; vertical-align: top; line-height: 1.58; color: var(--ink-mid); font-weight: 300; border-bottom: 0.5px solid var(--border); font-family: 'Figtree', sans-serif; }
-    .translation-table tr:last-child td { border-bottom: none; }
-    .col-paper { background: #F3F1ED; font-style: italic; }
-    .col-plain { background: var(--parchment-card); }
-    .table-limitation { font-size: 0.72rem; color: var(--ink-faint); padding: 0.65rem 0.85rem; font-family: 'Figtree', sans-serif; border-top: 0.5px solid var(--border); background: var(--parchment); }
+    .findings-box { border: 0.5px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; background: var(--parchment); }
+    .findings-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); margin-bottom: 0.75rem; }
+    .findings-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem; }
+    .findings-list li { font-size: 0.85rem; line-height: 1.62; color: var(--ink-mid); font-weight: 300; font-family: 'Figtree', sans-serif; padding-left: 1.1rem; position: relative; }
+    .findings-list li::before { content: '●'; position: absolute; left: 0; color: var(--sage); font-weight: 600; font-size: 0.45rem; top: 0.4em; }
 
     .compass { margin-top:1.5rem; border-radius: 10px; overflow: hidden; border: 0.5px solid var(--purple-pale); }
     .compass-header { background: var(--purple-bg); padding: 0.6rem 1rem; border-bottom: 0.5px solid var(--purple-pale); font-family: 'DM Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--purple); display: flex; align-items: center; gap: 0.4rem; }
@@ -321,6 +319,56 @@
       .trust-box { grid-template-columns: 1fr; }
       .trust-cell:first-child { border-right: none; border-bottom: 0.5px solid var(--border); }
     }
+    /* ── EXAMPLE SECTION v3 ── */
+  #example { padding: 5.5rem 0; background: var(--parchment-card); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+  #example > .wrap { text-align: left; }
+  .example-card { background: var(--parchment-card); border: 0.5px solid var(--border-mid); border-radius: 16px; padding: 2rem; max-width: 680px; box-shadow: 0 6px 32px rgba(26,25,22,0.06); margin-top: 2rem; }
+  .ex-eyebrow { display:flex; align-items:center; gap:8px; margin-bottom:1rem; flex-wrap: wrap; }
+  .ex-tag { font-size:0.67rem; font-weight:600; letter-spacing:0.07em; text-transform: uppercase; padding:0.22rem 0.6rem; border-radius:100px; background:var(--purple-bg); color:var(--purple-dark); font-family:'Figtree',sans-serif; }
+  .ex-source { font-size:0.7rem; color:var(--ink-faint); margin-left:auto; font-family:'DM Mono',monospace; }
+  .ex-headline { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:500; line-height:1.35; color:var(--ink); margin:0 0 1.25rem; letter-spacing:-0.01em; }
+  .ex-trust-box { display:grid; grid-template-columns:1fr 1fr; gap:0; border:0.5px solid var(--border-mid); border-radius:11px; overflow:hidden; margin-bottom:0; }
+  .ex-score-card { background:var(--parchment); padding:0.9rem 1rem; }
+  .ex-score-card:first-child { border-right: 0.5px solid var(--border); }
+  .ex-score-label { font-family:'DM Mono',monospace; font-size:0.6rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 0.35rem; }
+  .ex-score-row { display:flex; align-items:center; gap:0.4rem; margin-bottom:0.15rem; }
+  .ex-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+  .ex-dot--green { background:var(--sage); }
+  .ex-dot--amber { background:#C8893A; }
+  .ex-dot--red { background:#C94040; }
+  .ex-score-value { font-size:0.8rem; font-weight:500; color:var(--ink); font-family:'Figtree',sans-serif; }
+  .ex-score-sub { font-size:0.7rem; color:var(--ink-muted); margin:0; line-height:1.45; font-family:'Figtree',sans-serif; font-weight:300; }
+  .ex-tier2 { margin-top:0; border:0.5px solid var(--border-mid); border-top: none; border-radius:0 0 11px 11px; overflow:hidden; margin-bottom:1.5rem; }
+  .ex-tier2-toggle { width:100%; display:flex; align-items:center; justify-content:space-between; padding:0.55rem 1rem; background:var(--parchment); border:none; cursor:pointer; font-family:'DM Mono',monospace; transition:background 0.15s; border-top: 0.5px solid var(--border); }
+  .ex-tier2-toggle:hover { background:var(--purple-bg); }
+  .ex-tier2-label { font-size:0.6rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--purple); }
+  .ex-tier2-arrow { font-size:0.75rem; color:var(--purple-mid); transition:transform 0.2s; display:inline-block; }
+  .ex-tier2-toggle[aria-expanded="true"] .ex-tier2-arrow { transform:rotate(180deg); }
+  .ex-tier2-body { padding:1rem; background:var(--purple-bg); }
+  .ex-tier2-body[hidden] { display:none; }
+  .ex-tier2-grid { display:flex; flex-direction:column; gap:0.65rem; }
+  .ex-tier2-item { display:grid; grid-template-columns:140px 1fr; gap:0.5rem; align-items:baseline; }
+  .ex-tier2-key { font-size:0.72rem; font-weight:600; color:var(--purple); margin:0; font-family:'Figtree',sans-serif; }
+  .ex-tier2-val { font-size:0.78rem; color:var(--ink-mid); margin:0; line-height:1.5; font-family:'Figtree',sans-serif; font-weight:300; }
+  .ex-divider { border:none; border-top:0.5px solid var(--border); margin:1.25rem 0; }
+  .ex-section-label { font-family:'DM Mono',monospace; font-size:0.6rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--purple); margin:0 0 0.6rem; display:block; }
+  .ex-body { font-size:0.88rem; line-height:1.78; color:var(--ink-mid); margin:0; font-family:'Figtree',sans-serif; font-weight:300; }
+  .ex-bullets { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.65rem; }
+  .ex-bullets li { display:flex; gap:0.75rem; align-items:flex-start; font-size:0.85rem; line-height:1.65; color:var(--ink-mid); font-family:'Figtree',sans-serif; font-weight:300; }
+  .ex-bullet-dot { width:7px; height:7px; border-radius:50%; background:var(--purple-mid); flex-shrink:0; margin-top:0.45em; }
+  .ex-compass { background:var(--purple-bg); border:0.5px solid var(--purple-pale); border-radius:10px; padding:1rem 1.1rem; }
+  .ex-compass-label { font-family:'DM Mono',monospace; font-size:0.6rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--purple); margin:0 0 0.75rem; display:block; }
+  .ex-compass-q { display:flex; gap:0.6rem; align-items:flex-start; font-size:0.82rem; line-height:1.62; color:var(--ink-mid); font-family:'Figtree',sans-serif; font-weight:300; background:var(--purple-bg); border-left:3px solid var(--purple); padding:0.6rem 0.75rem; border-radius:0 6px 6px 0; }
+  .ex-compass-q + .ex-compass-q { margin-top:0.5rem; }
+  .ex-arrow { font-size:0.82rem; color:var(--purple); flex-shrink:0; margin-top:0.1rem; font-weight:600; }
+  .ex-footer { margin-top:1rem; padding:0.75rem 1rem; background:var(--parchment); border-radius:8px; border:0.5px solid var(--border); display:flex; flex-direction:column; gap:0.3rem; }
+  .ex-footer-sources { font-size:0.7rem; color:var(--ink-faint); line-height:1.6; font-family:'Figtree',sans-serif; }
+  .ex-footer-author { font-weight:600; color:var(--ink-muted); }
+  .ex-footer-sep { margin:0 4px; }
+  .ex-footer-link { font-size:0.72rem; font-weight:500; color:var(--purple); text-decoration:none; font-family:'Figtree',sans-serif; }
+  .ex-footer-link:hover { text-decoration:underline; }
+  @media (max-width:600px) { .ex-trust-box { grid-template-columns:1fr; } .ex-score-card:first-child { border-right:none; border-bottom:0.5px solid var(--border); } .ex-headline { font-size:1.05rem; } .ex-tier2-item { grid-template-columns:1fr; gap:2px; } }
+
   </style>
 </head>
 <body>
@@ -520,133 +568,145 @@
 </section>
 
 <!-- ARTICLE PREVIEW -->
-<section class="preview-section" id="example">
-  <div class="wrap-wide">
+<section id="example">
+  <div class="wrap">
     <span class="label">See an example</span>
     <h2>"What's the link between perimenopause and poor sleep?"</h2>
-    <div class="article-shell">
-      <div class="article-topbar">
-        <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
-        <div class="url-bar">femsource.ai &middot; Perimenopause &amp; Sleep</div>
+  <div class="example-card">
+
+    <!-- Eyebrow -->
+    <div class="ex-eyebrow">
+      <span class="ex-tag">Perimenopause</span>
+      <span class="ex-tag">Sleep</span>
+      <span class="ex-source">femsource.ai</span>
+    </div>
+
+    <!-- Headline -->
+    <h3 class="ex-headline">
+      Progesterone decline changes the architecture of your sleep — not just how long you sleep, but how deeply
+    </h3>
+
+    <!-- Tier 1: Trust Box -->
+    <div class="ex-trust-box">
+      <div class="ex-score-card">
+        <p class="ex-score-label">Bias &amp; funding</p>
+        <div class="ex-score-row">
+          <span class="ex-dot ex-dot--green"></span>
+          <span class="ex-score-value">Low risk</span>
+        </div>
+        <p class="ex-score-sub">NIH-funded · No industry conflicts disclosed</p>
       </div>
-      <div class="article-body">
-        <div class="article-meta">
-          <span class="meta-pill pill-topic">Perimenopause &middot; Sleep</span>
+      <div class="ex-score-card">
+        <p class="ex-score-label">Confidence</p>
+        <div class="ex-score-row">
+          <span class="ex-dot ex-dot--amber"></span>
+          <span class="ex-score-value">Moderate</span>
         </div>
-        <div class="article-headline">Progesterone decline disrupts deep sleep in perimenopause — and women whose sleep is already struggling are hit hardest</div>
-        <div class="trust-box">
-          <div class="trust-cell">
-            <div class="trust-cell-label">Bias &amp; Funding Score</div>
-            <div class="trust-cell-val"><span class="score-dot s-green"></span> Low risk — publicly funded</div>
-            <div class="trust-cell-sub">NIH-funded &middot; No industry conflicts disclosed</div>
+        <p class="ex-score-sub">Small objective studies · Consistent large-cohort self-report data</p>
+      </div>
+    </div>
+
+    <!-- Tier 2: Expandable -->
+    <div class="ex-tier2">
+      <button class="ex-tier2-toggle" onclick="toggleTier2(this)" aria-expanded="false">
+        <span class="ex-tier2-label">How we scored this</span>
+        <span class="ex-tier2-arrow">↓</span>
+      </button>
+      <div class="ex-tier2-body" hidden>
+        <div class="ex-tier2-grid">
+          <div class="ex-tier2-item">
+            <p class="ex-tier2-key">Peer review status</p>
+            <p class="ex-tier2-val">Peer reviewed · Published in accredited medical journals</p>
           </div>
-          <div class="trust-cell">
-            <div class="trust-cell-label">Confidence Score</div>
-            <div class="trust-cell-val"><span class="score-dot s-amber"></span> Moderate — small objective studies, consistent self-report data</div>
-            <div class="trust-cell-sub">PSG studies: n=20–189 &middot; Supported by cohort data (n&gt;3,000)</div>
+          <div class="ex-tier2-item">
+            <p class="ex-tier2-key">Sponsors</p>
+            <p class="ex-tier2-val">NIH · No pharmaceutical sponsorship</p>
           </div>
-        </div>
-        <div class="tldr-box">
-          <div class="tldr-label">TL;DR</div>
-          <div class="tldr-text">As progesterone declines during perimenopause, the deep restorative stage of sleep shortens — a finding confirmed by both brain-wave monitoring and women's own reports. This is why waking exhausted is so common, even after a full night in bed. Progesterone replacement specifically restores deep sleep when sleep is already disrupted, but doesn't further improve sleep that's fine. Women who struggled with sleep before perimenopause are affected most.</div>
-        </div>
-        <div style="border:0.5px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:1.5rem;margin-top:1.5rem;">
-          <table class="translation-table" style="margin-bottom:0;">
-            <thead>
-              <tr>
-                <th class="col-paper" style="width:50%;font-style:normal;">The paper says...</th>
-                <th class="col-plain" style="width:50%;">We say...</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="col-paper">"Women demonstrated less percentage slow-wave sleep when progesterone was raised during the luteal compared with the follicular phase" — Baker et al., 2015</td>
-                <td class="col-plain">The hormonal shifts of perimenopause don't just make you toss and turn — they change the architecture of your sleep itself. When progesterone fluctuates, the deepest, most restorative stage of sleep is directly affected. That's why you can spend eight hours in bed and still wake up exhausted.</td>
-              </tr>
-              <tr>
-                <td class="col-paper">"Progesterone had no effect on undisturbed sleep but restored normal sleep when sleep was disturbed" — Caufriez et al., 2011</td>
-                <td class="col-plain">If your sleep is already disrupted — as it so often is in perimenopause — progesterone may help restore it. But if your sleep is fine, supplementing won't make it better. The benefit targets the problem, not the baseline. Your vulnerability is what determines whether intervention helps.</td>
-              </tr>
-              <tr>
-                <td class="col-paper">"Melatonin supplementation improves insomnia symptoms and mood disorders in peri- and postmenopausal women without serious side effects" — Troìa et al., 2025</td>
-                <td class="col-plain">Melatonin can help you fall asleep and stabilise your circadian rhythm — and for some women that's enough. But it doesn't address the underlying hormonal cause of disrupted deep sleep. If sleep is a real problem for you in perimenopause, melatonin alone is unlikely to be enough.</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="table-limitation">Note: objective sleep data comes from small laboratory studies (n=8–20); large cohort data (n&gt;3,000) relies on self-reported sleep quality. The overall direction of evidence is consistent across methods, but effect sizes should be interpreted with caution.</div>
-        </div>
-        <div class="compass" style="margin-top:1.5rem;">
-          <div class="compass-header">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#7B5AAF" stroke-width="1"/><circle cx="6" cy="6" r="1.5" fill="#7B5AAF"/></svg>
-            Doctor's Office Compass — questions to bring to your next appointment
+          <div class="ex-tier2-item">
+            <p class="ex-tier2-key">Study population</p>
+            <p class="ex-tier2-val">Primary: n=20–189 (PSG) · Supporting cohort: n&gt;3,000</p>
           </div>
-          <div class="compass-q"><span class="compass-arrow">→</span> Given my sleep patterns, would checking my progesterone and estradiol levels help guide treatment during this phase?</div>
-          <div class="compass-q"><span class="compass-arrow">→</span> I've read that progesterone may specifically restore deep sleep when it's already disrupted — is that an option for me, and what are the risks?</div>
-        </div>
-        <div style="margin-top:1rem;padding:0.75rem 1rem;background:var(--parchment);border-radius:8px;border:0.5px solid var(--border);font-size:0.7rem;color:var(--ink-faint);font-family:'Figtree',sans-serif;">
-          Source: J Clin Endocrinol Metab &middot; 2011 &amp; 2015 &middot; Supported by J Clin Med 2025 review &middot; <span style="color:var(--purple);cursor:pointer;">View original study →</span>
-        </div>
-        <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:0.5px solid var(--border);">
-          <div style="font-family:'DM Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-faint);margin-bottom:1.25rem;">Related reading from your library</div>
-          <div class="cards-grid">
-            <div class="research-card">
-              <div class="card-img ci-1">&#128564;</div>
-              <div class="card-body">
-                <div class="card-scores">
-                  <span class="score-badge badge-green"><span class="score-dot-sm s-green"></span>Low bias</span>
-                  <span class="score-badge badge-green"><span class="score-dot-sm s-green"></span>High confidence</span>
-                </div>
-                <div class="card-topic">Perimenopause &middot; Hormones</div>
-                <div class="card-title">Can progesterone actually fix perimenopausal sleep problems? Here's what a Phase III trial found</div>
-                <div class="card-meta">Based on Prior et al. &middot; Menopause: The Journal of NAMS &middot; 2023</div>
-              </div>
-              <div class="card-actions">
-                <button class="card-action">&#128077; Helpful</button>
-                <button class="card-action">&#128078;</button>
-                <button class="card-action card-action-bookmark">&#128278; Save</button>
-              </div>
-            </div>
-            <div class="research-card">
-              <div class="card-img ci-2">&#129504;</div>
-              <div class="card-body">
-                <div class="card-scores">
-                  <span class="score-badge badge-green"><span class="score-dot-sm s-green"></span>Low bias</span>
-                  <span class="score-badge badge-green"><span class="score-dot-sm s-green"></span>High confidence</span>
-                </div>
-                <div class="card-topic">Perimenopause &middot; Sleep</div>
-                <div class="card-title">How common is poor sleep during perimenopause, and what actually helps? A plain-language breakdown</div>
-                <div class="card-meta">Based on Baker et al. &middot; Nature and Science of Sleep &middot; 2018</div>
-              </div>
-              <div class="card-actions">
-                <button class="card-action">&#128077; Helpful</button>
-                <button class="card-action">&#128078;</button>
-                <button class="card-action card-action-bookmark">&#128278; Save</button>
-              </div>
-            </div>
-            <div class="research-card">
-              <div class="card-img ci-3">&#127807;</div>
-              <div class="card-body">
-                <div class="card-scores">
-                  <span class="score-badge badge-amber"><span class="score-dot-sm s-amber"></span>Mod. bias</span>
-                  <span class="score-badge badge-amber"><span class="score-dot-sm s-amber"></span>Mod. confidence</span>
-                </div>
-                <div class="card-topic">Perimenopause &middot; Lifestyle</div>
-                <div class="card-title">Melatonin, CBT, and sleep hygiene in perimenopause: what the research says about non-hormonal options</div>
-                <div class="card-meta">Based on Troìa et al. &middot; Journal of Clinical Medicine &middot; 2025</div>
-              </div>
-              <div class="card-actions">
-                <button class="card-action">&#128077; Helpful</button>
-                <button class="card-action">&#128078;</button>
-                <button class="card-action card-action-bookmark">&#128278; Save</button>
-              </div>
-            </div>
+          <div class="ex-tier2-item">
+            <p class="ex-tier2-key">Demography</p>
+            <p class="ex-tier2-val">Perimenopausal &amp; postmenopausal women · Ages 40–60 · Predominantly North American &amp; European cohorts</p>
+          </div>
+          <div class="ex-tier2-item">
+            <p class="ex-tier2-key">Citation count</p>
+            <p class="ex-tier2-val">Baker et al. 2015: 312 citations · Caufriez et al. 2011: 189 citations · Troìa et al. 2025: 14 citations</p>
+          </div>
+          <div class="ex-tier2-item">
+            <p class="ex-tier2-key">Date conducted</p>
+            <p class="ex-tier2-val">2008–2014 (primary studies) · 2023–2024 (supporting review)</p>
+          </div>
+          <div class="ex-tier2-item">
+            <p class="ex-tier2-key">Date published</p>
+            <p class="ex-tier2-val">2011 · 2015 · 2025</p>
           </div>
         </div>
       </div>
     </div>
 
+    <div class="ex-divider"></div>
+
+    <!-- Why This Matters to You -->
+    <p class="ex-section-label">Why this matters to you</p>
+    <p class="ex-body">
+      If you're waking up exhausted after a full night in bed, this is the physiological reason. As progesterone declines, the deep restorative stage of sleep doesn't just feel shorter. It actually is shorter, measurable on brain-wave monitoring. This isn't poor sleep hygiene or stress. It's a structural hormonal effect on how your brain moves through sleep cycles, which means behavioural fixes alone are unlikely to be enough. Knowing this changes what you ask your doctor, and which interventions are actually worth considering.
+    </p>
+
+    <div class="ex-divider"></div>
+
+    <!-- What the Research Found -->
+    <p class="ex-section-label">What the research found</p>
+    <ul class="ex-bullets">
+      <li>
+        <span class="ex-bullet-dot"></span>
+        <span>Waking exhausted after eight hours isn't anxiety or aging. Progesterone decline measurably shortens slow-wave sleep. The problem is architectural, not behavioural.</span>
+      </li>
+      <li>
+        <span class="ex-bullet-dot"></span>
+        <span>Progesterone replacement specifically targets disrupted sleep. It restores what's broken, but won't improve sleep that's already fine. Your vulnerability determines whether it helps.</span>
+      </li>
+      <li>
+        <span class="ex-bullet-dot"></span>
+        <span>Melatonin helps with sleep onset and circadian rhythm but doesn't address the hormonal root cause. For perimenopausal sleep disruption, it's unlikely to be sufficient on its own.</span>
+      </li>
+    </ul>
+
+    <div class="ex-divider"></div>
+
+    <!-- Doctor's Compass -->
+    <div class="ex-compass">
+      <p class="ex-compass-label">Doctor's compass: bring these to your next appointment</p>
+      <div class="ex-compass-q">
+        <span class="ex-arrow">→</span>
+        <span>Given what I'm experiencing, would checking my progesterone and estradiol levels help identify what's driving my sleep disruption?</span>
+      </div>
+      <div class="ex-compass-q">
+        <span class="ex-arrow">→</span>
+        <span>I've read that progesterone may specifically restore deep sleep when it's already disrupted. Is that worth considering for me, and what are the risks?</span>
+      </div>
+    </div>
+
+    <!-- Tier 3: Source footer -->
+    <div class="ex-footer">
+      <div class="ex-footer-sources">
+        <span class="ex-footer-author">Baker et al.</span> J Clin Endocrinol Metab · 2015
+        <span class="ex-footer-sep">·</span>
+        <span class="ex-footer-author">Caufriez et al.</span> J Clin Endocrinol Metab · 2011
+        <span class="ex-footer-sep">·</span>
+        <span class="ex-footer-author">Troìa et al.</span> J Clin Med · 2025
+      </div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/?term=progesterone+sleep+perimenopause"
+         target="_blank"
+         rel="noopener"
+         class="ex-footer-link">View original studies →</a>
+    </div>
+
+  </div>
   </div>
 </section>
+
 
 <!-- BRIDGE -->
 <div class="bridge-section">
@@ -883,7 +943,14 @@
     });
   }
 
-  var sliderCurrent = 0;
+  function toggleTier2(btn) {
+    var body = btn.nextElementSibling;
+    var expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    body.hidden = expanded;
+  }
+
+
   var sliderTotal = 4;
 
   function sliderGoTo(n) {
