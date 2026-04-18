@@ -372,6 +372,12 @@
   .ex-footer-link:hover { text-decoration:underline; }
   @media (max-width:600px) { .ex-trust-box { grid-template-columns:1fr; } .ex-score-card:first-child { border-right:none; border-bottom:0.5px solid var(--border); } .ex-headline { font-size:1.05rem; } .ex-tier2-item { grid-template-columns:1fr; gap:2px; } }
 
+  .ex-tabs { display:flex; gap:0.5rem; margin-top:1.5rem; margin-bottom:0; flex-wrap:wrap; }
+  .ex-tab { font-family:'Figtree',sans-serif; font-size:0.8rem; font-weight:500; padding:0.45rem 1.1rem; border-radius:100px; border:0.5px solid var(--border-mid); background:var(--parchment-card); color:var(--ink-muted); cursor:pointer; transition:all 0.15s; }
+  .ex-tab.active { background:var(--purple); color:#fff; border-color:var(--purple); }
+  .ex-tab:hover:not(.active) { border-color:var(--purple-pale); color:var(--purple); }
+  .ex-question { font-family:'Cormorant Garamond',serif; font-size:1rem; font-style:italic; color:var(--ink-muted); margin:0 0 0.75rem; font-weight:400; }
+
   </style>
 </head>
 <body>
@@ -574,141 +580,143 @@
 <section id="example">
   <div class="wrap">
     <span class="label">See an example</span>
-    <h2>"What's the link between perimenopause and poor sleep?"</h2>
-  <div class="example-card">
+    <h2>This is what a FemSource answer looks like.</h2>
 
-    <!-- Eyebrow -->
-    <div class="ex-eyebrow">
-      <span class="ex-tag">Perimenopause</span>
-      <span class="ex-tag">Sleep</span>
-      <span class="ex-source">femsource.ai</span>
+    <div class="ex-tabs">
+      <button class="ex-tab active" onclick="switchExample(0, this)">Endometriosis &amp; Surgery</button>
+      <button class="ex-tab" onclick="switchExample(1, this)">Perimenopause &amp; Sleep</button>
     </div>
 
-    <!-- Headline -->
-    <h3 class="ex-headline">
-      Progesterone decline changes the architecture of your sleep — not just how long you sleep, but how deeply
-    </h3>
-
-    <!-- Tier 1: Trust Box -->
-    <div class="ex-trust-box">
-      <div class="ex-score-card">
-        <p class="ex-score-label">Bias &amp; funding</p>
-        <div class="ex-score-row">
-          <span class="ex-dot ex-dot--green"></span>
-          <span class="ex-score-value">Low risk</span>
-        </div>
-        <p class="ex-score-sub">NIH-funded · No industry conflicts disclosed</p>
+    <!-- Example 1 (Endometriosis) -->
+    <div class="example-card" id="ex-card-0">
+      <div class="ex-eyebrow">
+        <span class="ex-tag">Endometriosis</span>
+        <span class="ex-tag">Surgery</span>
+        <span class="ex-source">FemSource</span>
       </div>
-      <div class="ex-score-card">
-        <p class="ex-score-label">Confidence</p>
-        <div class="ex-score-row">
-          <span class="ex-dot ex-dot--amber"></span>
-          <span class="ex-score-value">Moderate</span>
+      <p class="ex-question">"Is excision surgery actually better than ablation for endometriosis pain?"</p>
+      <h3 class="ex-headline">The evidence on excision versus ablation is less clear-cut than you'd expect, and the recurrence data is what most women aren't told</h3>
+      <div class="ex-trust-box">
+        <div class="ex-score-card">
+          <p class="ex-score-label">Bias &amp; funding</p>
+          <div class="ex-score-row"><span class="ex-dot ex-dot--amber"></span><span class="ex-score-value">Low-moderate risk</span></div>
+          <p class="ex-score-sub">Institutional &amp; academic funding · No pharma sponsorship identified</p>
         </div>
-        <p class="ex-score-sub">Small objective studies · Consistent large-cohort self-report data</p>
+        <div class="ex-score-card">
+          <p class="ex-score-label">Confidence</p>
+          <div class="ex-score-row"><span class="ex-dot ex-dot--amber"></span><span class="ex-score-value">Moderate</span></div>
+          <p class="ex-score-sub">Mixed results depending on disease stage · Poor outcome standardisation limits comparison</p>
+        </div>
       </div>
-    </div>
-
-    <!-- Tier 2: Expandable -->
-    <div class="ex-tier2">
-      <button class="ex-tier2-toggle" onclick="toggleTier2(this)" aria-expanded="false">
-        <span class="ex-tier2-label">How we scored this</span>
-        <span class="ex-tier2-arrow">↓</span>
-      </button>
-      <div class="ex-tier2-body" hidden>
-        <div class="ex-tier2-grid">
-          <div class="ex-tier2-item">
-            <p class="ex-tier2-key">Peer review status</p>
-            <p class="ex-tier2-val">Peer reviewed · Published in accredited medical journals</p>
-          </div>
-          <div class="ex-tier2-item">
-            <p class="ex-tier2-key">Sponsors</p>
-            <p class="ex-tier2-val">NIH · No pharmaceutical sponsorship</p>
-          </div>
-          <div class="ex-tier2-item">
-            <p class="ex-tier2-key">Study population</p>
-            <p class="ex-tier2-val">Primary: n=20–189 (PSG) · Supporting cohort: n&gt;3,000</p>
-          </div>
-          <div class="ex-tier2-item">
-            <p class="ex-tier2-key">Demography</p>
-            <p class="ex-tier2-val">Perimenopausal &amp; postmenopausal women · Ages 40–60 · Predominantly North American &amp; European cohorts</p>
-          </div>
-          <div class="ex-tier2-item">
-            <p class="ex-tier2-key">Citation count</p>
-            <p class="ex-tier2-val">Baker et al. 2015: 312 citations · Caufriez et al. 2011: 189 citations · Troìa et al. 2025: 14 citations</p>
-          </div>
-          <div class="ex-tier2-item">
-            <p class="ex-tier2-key">Date conducted</p>
-            <p class="ex-tier2-val">2008–2014 (primary studies) · 2023–2024 (supporting review)</p>
-          </div>
-          <div class="ex-tier2-item">
-            <p class="ex-tier2-key">Date published</p>
-            <p class="ex-tier2-val">2011 · 2015 · 2025</p>
+      <div class="ex-tier2">
+        <button class="ex-tier2-toggle" onclick="toggleTier2(this)" aria-expanded="false">
+          <span class="ex-tier2-label">How we scored this</span>
+          <span class="ex-tier2-arrow">↓</span>
+        </button>
+        <div class="ex-tier2-body" hidden>
+          <div class="ex-tier2-grid">
+            <div class="ex-tier2-item"><p class="ex-tier2-key">Peer review status</p><p class="ex-tier2-val">Peer reviewed · Published in J Minim Invasive Gynecol, Reprod Fertil, Fertil Steril</p></div>
+            <div class="ex-tier2-item"><p class="ex-tier2-key">Sponsors</p><p class="ex-tier2-val">Abbott et al.: University of New South Wales, Sydney (no pharma) · Pickett et al.: UC San Diego academic centre (no pharma) · Burks et al.: academic institutional funding (no pharma sponsorship identified)</p></div>
+            <div class="ex-tier2-item"><p class="ex-tier2-key">Study population</p><p class="ex-tier2-val">Systematic review: 38 studies · Individual RCTs: n=20–300 · Cohort studies: n up to several thousand</p></div>
+            <div class="ex-tier2-item"><p class="ex-tier2-key">Demography</p><p class="ex-tier2-val">Women of reproductive age with confirmed endometriosis · North American &amp; European centres</p></div>
+            <div class="ex-tier2-item"><p class="ex-tier2-key">Key limitation</p><p class="ex-tier2-val">Outcome reporting is poorly standardised. Pain scales, follow-up periods, and definitions of recurrence vary across studies.</p></div>
+            <div class="ex-tier2-item"><p class="ex-tier2-key">Date published</p><p class="ex-tier2-val">2021 systematic review · 2023 current care review · Supporting studies 2004–2026</p></div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="ex-divider"></div>
-
-    <!-- Why This Matters to You -->
-    <div class="ex-why-matters">
-      <p class="ex-section-label">Why this matters to you</p>
-      <p class="ex-body">
-        When progesterone drops, your brain spends less time in slow-wave sleep — the stage that consolidates memory, regulates cortisol, and leaves you feeling genuinely rested. You can sleep eight hours and still wake up exhausted because the hours themselves are no longer the problem. This is why behavioural fixes like sleep hygiene and earlier bedtimes often fail in perimenopause: they address the surface, not the cause. The research is clear that this is hormonal, structural, and measurable. Knowing that changes the conversation you need to have with your doctor.
-      </p>
-    </div>
-
-    <div class="ex-divider"></div>
-
-    <!-- What the Research Found -->
-    <p class="ex-section-label">What the research found</p>
-    <ul class="ex-bullets">
-      <li>
-        <span class="ex-bullet-dot"></span>
-        <span>Waking exhausted after eight hours isn't anxiety or aging. Progesterone decline measurably shortens slow-wave sleep. The problem is architectural, not behavioural.</span>
-      </li>
-      <li>
-        <span class="ex-bullet-dot"></span>
-        <span>Progesterone replacement specifically targets disrupted sleep. It restores what's broken, but won't improve sleep that's already fine. Your vulnerability determines whether it helps.</span>
-      </li>
-      <li>
-        <span class="ex-bullet-dot"></span>
-        <span>Melatonin helps with sleep onset and circadian rhythm but doesn't address the hormonal root cause. For perimenopausal sleep disruption, it's unlikely to be sufficient on its own.</span>
-      </li>
-    </ul>
-
-    <div class="ex-divider"></div>
-
-    <!-- Doctor's Compass -->
-    <div class="ex-compass">
-      <p class="ex-compass-label">Doctor's compass: bring these to your next appointment</p>
-      <div class="ex-compass-q">
-        <span class="ex-arrow">→</span>
-        <span>Given what I'm experiencing, would checking my progesterone and estradiol levels help identify what's driving my sleep disruption?</span>
+      <div class="ex-divider"></div>
+      <div class="ex-why-matters">
+        <p class="ex-section-label">Why this matters to you</p>
+        <p class="ex-body">If you've been told excision is always the better option, the evidence is more nuanced than that. The type and location of your lesions matter — for some presentations the depth of removal makes a real difference, for others the research shows no meaningful advantage over ablation. What almost never comes up before surgery is that roughly one in five women needs a repeat procedure within two years, regardless of which technique was used. That's not a reason to avoid surgery. It's a reason to ask better questions before you agree to it.</p>
       </div>
-      <div class="ex-compass-q">
-        <span class="ex-arrow">→</span>
-        <span>I've read that progesterone may specifically restore deep sleep when it's already disrupted. Is that worth considering for me, and what are the risks?</span>
+      <div class="ex-divider"></div>
+      <p class="ex-section-label">What the research found</p>
+      <ul class="ex-bullets">
+        <li><span class="ex-bullet-dot"></span><span>For ovarian endometriomas and deep infiltrating disease, excision is associated with lower recurrence rates than ablation. For superficial peritoneal endometriosis, systematic reviews have found no significant difference in pain outcomes between the two techniques.</span></li>
+        <li><span class="ex-bullet-dot"></span><span>Around 12% of women report no meaningful improvement in pain after surgical excision. Surgery helps the majority, but it is not a guarantee of relief.</span></li>
+        <li><span class="ex-bullet-dot"></span><span>Reoperation rates reach approximately 20% at two years and climb to 28–37% at five years. This figure is rarely part of the preoperative conversation, and it applies regardless of whether excision or ablation is performed.</span></li>
+      </ul>
+      <div class="ex-divider"></div>
+      <div class="ex-compass">
+        <p class="ex-compass-label">Doctor's compass: bring these to your next appointment</p>
+        <div class="ex-compass-q"><span class="ex-arrow">→</span><span>Given my disease stage and lesion type, what does the evidence actually show about excision versus ablation for my specific case?</span></div>
+        <div class="ex-compass-q"><span class="ex-arrow">→</span><span>What is your personal reoperation rate for patients at my stage, and what factors most influence whether pain returns?</span></div>
+      </div>
+      <div class="ex-footer">
+        <div class="ex-footer-sources">
+          <span class="ex-footer-author">Burks et al.</span> J Minim Invasive Gynecol · 2021 <span class="ex-footer-sep">·</span>
+          <span class="ex-footer-author">Pickett et al.</span> Reprod Fertil · 2023 <span class="ex-footer-sep">·</span>
+          <span class="ex-footer-author">Abbott et al.</span> Fertil Steril · 2004
+        </div>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/?term=excision+ablation+endometriosis+pain+outcomes" target="_blank" rel="noopener" class="ex-footer-link">View original studies →</a>
       </div>
     </div>
 
-    <!-- Tier 3: Source footer -->
-    <div class="ex-footer">
-      <div class="ex-footer-sources">
-        <span class="ex-footer-author">Baker et al.</span> J Clin Endocrinol Metab · 2015
-        <span class="ex-footer-sep">·</span>
-        <span class="ex-footer-author">Caufriez et al.</span> J Clin Endocrinol Metab · 2011
-        <span class="ex-footer-sep">·</span>
-        <span class="ex-footer-author">Troìa et al.</span> J Clin Med · 2025
+    <!-- Example 2 (Perimenopause) -->
+    <div class="example-card" id="ex-card-1" style="display:none;">
+      <div class="ex-eyebrow">
+        <span class="ex-tag">Perimenopause</span>
+        <span class="ex-tag">Sleep</span>
+        <span class="ex-source">FemSource</span>
       </div>
-      <a href="https://pubmed.ncbi.nlm.nih.gov/?term=progesterone+sleep+perimenopause"
-         target="_blank"
-         rel="noopener"
-         class="ex-footer-link">View original studies →</a>
+      <p class="ex-question">"What's the link between perimenopause and poor sleep?"</p>
+      <h3 class="ex-headline">Progesterone decline changes the architecture of your sleep — not just how long you sleep, but how deeply</h3>
+      <div class="ex-trust-box">
+        <div class="ex-score-card">
+          <p class="ex-score-label">Bias &amp; funding</p>
+          <div class="ex-score-row"><span class="ex-dot ex-dot--green"></span><span class="ex-score-value">Low risk</span></div>
+          <p class="ex-score-sub">NIH-funded · No industry conflicts disclosed</p>
+        </div>
+        <div class="ex-score-card">
+          <p class="ex-score-label">Confidence</p>
+          <div class="ex-score-row"><span class="ex-dot ex-dot--amber"></span><span class="ex-score-value">Moderate</span></div>
+          <p class="ex-score-sub">Small objective studies · Consistent large-cohort self-report data</p>
+        </div>
+      </div>
+      <div class="ex-tier2">
+        <button class="ex-tier2-toggle" onclick="toggleTier2(this)" aria-expanded="false">
+          <span class="ex-tier2-label">How we scored this</span>
+          <span class="ex-tier2-arrow">↓</span>
+        </button>
+        <div class="ex-tier2-body" hidden>
+          <div class="ex-tier2-grid">
+            <div class="ex-tier2-item"><p class="ex-tier2-key">Peer review status</p><p class="ex-tier2-val">Peer reviewed · Published in accredited medical journals</p></div>
+            <div class="ex-tier2-item"><p class="ex-tier2-key">Sponsors</p><p class="ex-tier2-val">NIH · No pharmaceutical sponsorship</p></div>
+            <div class="ex-tier2-item"><p class="ex-tier2-key">Study population</p><p class="ex-tier2-val">Primary: n=20–189 (PSG) · Supporting cohort: n&gt;3,000</p></div>
+            <div class="ex-tier2-item"><p class="ex-tier2-key">Demography</p><p class="ex-tier2-val">Perimenopausal &amp; postmenopausal women · Ages 40–60 · Predominantly North American &amp; European cohorts</p></div>
+            <div class="ex-tier2-item"><p class="ex-tier2-key">Citation count</p><p class="ex-tier2-val">Baker et al. 2015: 312 · Caufriez et al. 2011: 189 · Troìa et al. 2025: 14</p></div>
+            <div class="ex-tier2-item"><p class="ex-tier2-key">Date published</p><p class="ex-tier2-val">2011 · 2015 · 2025</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="ex-divider"></div>
+      <div class="ex-why-matters">
+        <p class="ex-section-label">Why this matters to you</p>
+        <p class="ex-body">When progesterone drops, your brain spends less time in slow-wave sleep — the stage that consolidates memory, regulates cortisol, and leaves you feeling genuinely rested. You can sleep eight hours and still wake up exhausted because the hours themselves are no longer the problem. This is why behavioural fixes like sleep hygiene and earlier bedtimes often fail in perimenopause: they address the surface, not the cause. The research is clear that this is hormonal, structural, and measurable. Knowing that changes the conversation you need to have with your doctor.</p>
+      </div>
+      <div class="ex-divider"></div>
+      <p class="ex-section-label">What the research found</p>
+      <ul class="ex-bullets">
+        <li><span class="ex-bullet-dot"></span><span>Waking exhausted after eight hours isn't anxiety or aging. Progesterone decline measurably shortens slow-wave sleep. The problem is architectural, not behavioural.</span></li>
+        <li><span class="ex-bullet-dot"></span><span>Progesterone replacement specifically targets disrupted sleep. It restores what's broken, but won't improve sleep that's already fine. Your vulnerability determines whether it helps.</span></li>
+        <li><span class="ex-bullet-dot"></span><span>Melatonin helps with sleep onset and circadian rhythm but doesn't address the hormonal root cause. For perimenopausal sleep disruption, it's unlikely to be sufficient on its own.</span></li>
+      </ul>
+      <div class="ex-divider"></div>
+      <div class="ex-compass">
+        <p class="ex-compass-label">Doctor's compass: bring these to your next appointment</p>
+        <div class="ex-compass-q"><span class="ex-arrow">→</span><span>Given what I'm experiencing, would checking my progesterone and estradiol levels help identify what's driving my sleep disruption?</span></div>
+        <div class="ex-compass-q"><span class="ex-arrow">→</span><span>I've read that progesterone may specifically restore deep sleep when it's already disrupted. Is that worth considering for me, and what are the risks?</span></div>
+      </div>
+      <div class="ex-footer">
+        <div class="ex-footer-sources">
+          <span class="ex-footer-author">Baker et al.</span> J Clin Endocrinol Metab · 2015 <span class="ex-footer-sep">·</span>
+          <span class="ex-footer-author">Caufriez et al.</span> J Clin Endocrinol Metab · 2011 <span class="ex-footer-sep">·</span>
+          <span class="ex-footer-author">Troìa et al.</span> J Clin Med · 2025
+        </div>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/?term=progesterone+sleep+perimenopause" target="_blank" rel="noopener" class="ex-footer-link">View original studies →</a>
+      </div>
     </div>
 
-  </div>
   </div>
 </section>
 
@@ -717,7 +725,7 @@
 <div class="bridge-section">
   <div class="wrap">
     <p class="bridge-headline">Information is the most powerful thing a woman can walk into a room with.</p>
-    <p class="bridge-body">When awareness of endometriosis grew, diagnostic delay dropped from 9 years to 4.6. Informed women get diagnosed faster. FemSource exists to give every woman that advantage.</p>
+    <p class="bridge-body">On average, it still takes 7 to 10 years for a woman to receive an endometriosis diagnosis — a delay driven primarily by physician training gaps and systemic failures. FemSource exists to give every woman the research-backed evidence to advocate for herself, and get the care she deserves.</p>
   </div>
 </div>
 
@@ -748,7 +756,7 @@
         <div class="waitlist-card">
           <div id="waitlist-cta-wrap">
             <div class="form-heading">Ready to join?</div>
-            <div class="form-subheading">Submit your question and we'll send you a personally researched answer within 72 hours — free, before we launch. First 50 only.</div>
+            <div class="form-subheading">Free. Takes 60 seconds. Shapes what we research first.</div>
             <button class="btn btn-teal" onclick="showWaitlistForm()" style="width:100%;justify-content:center;margin-top:1.25rem;">
               Join the waitlist — it's free
             </button>
@@ -823,7 +831,7 @@
           <div class="waitlist-success" id="waitlist-success" style="display:none;">
             <div class="success-icon">&#10003;</div>
             <div class="success-heading">You're on the list.</div>
-            <p class="success-text">We'll personally research your question and send you an answer within 72 hours — free, before we launch.</p>
+            <p class="success-text">We'll be in touch when FemSource launches — and your question goes straight to the top of our research queue.</p>
           </div>
         </div>
       </div>
@@ -946,6 +954,16 @@
       btn.textContent = 'Submit';
       alert('Something went wrong. Please try again.');
     });
+  }
+
+  function switchExample(n, btn) {
+    document.querySelectorAll('.example-card').forEach(function(el, i) {
+      el.style.display = i === n ? 'block' : 'none';
+    });
+    document.querySelectorAll('.ex-tab').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    btn.classList.add('active');
   }
 
   function toggleTier2(btn) {
