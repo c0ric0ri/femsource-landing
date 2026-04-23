@@ -5,3 +5,8 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+[[redirects]]
+  from = "/founding-member-welcome"
+  to = "/founding-member-welcome.html"
+  status = 200
