@@ -379,18 +379,14 @@
   .ex-question { font-family:'Cormorant Garamond',serif; font-size:1rem; font-style:italic; color:var(--ink-muted); margin:0 0 0.75rem; font-weight:400; }
 
   /* ── WAITLIST → FOUNDING MEMBER BRIDGE ── */
-  .waitlist-alt { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 0.5px solid var(--border); text-align: center; }
-  .waitlist-alt-label { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.5rem; }
-  .waitlist-alt-link { display: inline-flex; align-items: center; gap: 0.35rem; font-family: 'Figtree', sans-serif; font-size: 0.85rem; color: var(--purple); font-weight: 500; text-decoration: none; transition: color 0.15s; }
-  .waitlist-alt-link:hover { color: var(--purple-dark); }
-  .waitlist-alt-link .arrow { transition: transform 0.18s ease; }
-  .waitlist-alt-link:hover .arrow { transform: translateX(3px); }
-  .waitlist-alt-sub { display: block; font-size: 0.72rem; color: var(--ink-faint); font-weight: 300; margin-top: 0.3rem; font-family: 'Figtree', sans-serif; }
+  .waitlist-alt { margin-top: 0.75rem; }
+  .btn-outline-founding { display: inline-flex; align-items: center; justify-content: center; width: 100%; background: #fff; color: var(--purple); border: 1.5px solid var(--purple); padding: 0.85rem 1.9rem; font-size: 0.92rem; border-radius: 100px; font-family: 'Figtree', sans-serif; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.18s ease; }
+  .btn-outline-founding:hover { background: var(--purple-bg); border-color: var(--purple-dark); color: var(--purple-dark); transform: translateY(-1px); }
+  .waitlist-alt-sub { font-size: 0.71rem; color: var(--ink-faint); text-align: center; margin-top: 0.5rem; font-family: 'Figtree', sans-serif; }
 
   /* ── FOUNDING MEMBER ── */
   .founding-section { background: var(--parchment); border-top: 0.5px solid var(--border); }
   .founding-intro { font-size: 0.92rem; line-height: 1.78; color: var(--ink-muted); font-weight: 300; max-width: 520px; margin-top: 0.25rem; font-family: 'Figtree', sans-serif; }
-  .founding-intro em { font-family: 'Cormorant Garamond', serif; font-style: italic; }
   .founding-card { background: var(--parchment-card); border: 0.5px solid var(--border-mid); border-radius: 20px; padding: 2.5rem; max-width: 600px; margin: 2.5rem auto 0; }
   .founding-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; }
   .founding-card h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; letter-spacing: -0.01em; line-height: 1.2; }
@@ -424,7 +420,7 @@
 <section class="hero">
   <div class="wrap">
     <h1>Women's health research,<br><em>in your hands.</em></h1>
-    <p class="hero-sub">Ask a question. We find the research, translate what it says, and give you the evidence to advocate for yourself — in the doctor's office and in every health decision you make.</p>
+    <p class="hero-sub">Ask a question. We find the research, translate what it says, and give you the evidence to advocate for yourself: in the doctor's office and in every health decision you make.</p>
     <div class="search-demo">
       <div class="search-bar">
         <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#A09C96" stroke-width="1.5"/><path d="M10.5 10.5L14 14" stroke="#A09C96" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -528,7 +524,7 @@
   <div class="wrap">
     <span class="label">The problem</span>
     <h2>The research exists.<br>Your doctor just hasn't read it yet.</h2>
-    <p class="gap-lead">Women were excluded from clinical trials until 1993. Today, 58% of medical textbooks worldwide contain no reference to menopause at all. Physicians aren't failing women intentionally — but they're working from a system that was never designed with women in mind, and guidelines that take 17 years to catch up with new evidence.</p>
+    <p class="gap-lead">Women were excluded from clinical trials until 1993. Today, 58% of medical textbooks worldwide contain no reference to menopause at all. Physicians aren't failing women intentionally. They're working from a system that was never designed with women in mind, and guidelines that take 17 years to catch up with new evidence.</p>
     <p class="gap-lead" style="margin-top:1rem;">That gap affects everything: from managing perimenopause symptoms and understanding PCOS, to the prevention of conditions that disproportionately affect women like Alzheimer's, osteoporosis, cardiovascular disease, and breast cancer.</p>
     <div class="gap-grid">
       <div class="gap-card">
@@ -559,7 +555,7 @@
           <div class="step-num">01</div>
           <div class="step-body">
             <div class="step-title">You ask a question</div>
-            <div class="step-text">Type anything — a symptom, a treatment you've heard about, a study you saw on Instagram, a question you didn't get to finish in your last appointment.</div>
+            <div class="step-text">Type anything: a symptom, a treatment you've heard about, a study you saw on Instagram, a question you didn't get to finish in your last appointment.</div>
           </div>
         </div>
 
@@ -567,7 +563,7 @@
           <div class="step-num">02</div>
           <div class="step-body">
             <div class="step-title">We search the peer-reviewed literature</div>
-            <div class="step-text">FemSource queries PubMed, ACOG, NIH, and Cochrane — not Google. We identify the most relevant and recent studies, then retrieve the full text for analysis.</div>
+            <div class="step-text">FemSource queries PubMed, ACOG, NIH, and Cochrane. Not Google. We identify the most relevant and recent studies, then retrieve the full text for analysis.</div>
           </div>
         </div>
 
@@ -575,7 +571,7 @@
           <div class="step-num">03</div>
           <div class="step-body">
             <div class="step-title">Every study is scored before you read it</div>
-            <div class="step-text">We analyze who funded the research, whether authors had financial ties, and how robust the methodology was. The scores appear at the top — not buried in a footnote.</div>
+            <div class="step-text">We analyze who funded the research, whether authors had financial ties, and how robust the methodology was. The scores appear at the top, not buried in a footnote.</div>
           </div>
         </div>
 
@@ -655,7 +651,7 @@
       <div class="ex-divider"></div>
       <div class="ex-why-matters">
         <p class="ex-section-label">Why this matters to you</p>
-        <p class="ex-body">If you've been told excision is always the better option, the evidence is more nuanced than that. The type and location of your lesions matter — for some presentations the depth of removal makes a real difference, for others the research shows no meaningful advantage over ablation. What almost never comes up before surgery is that roughly one in five women needs a repeat procedure within two years, regardless of which technique was used. That's not a reason to avoid surgery. It's a reason to ask better questions before you agree to it.</p>
+        <p class="ex-body">If you've been told excision is always the better option, the evidence is more nuanced than that. The type and location of your lesions matter: for some presentations the depth of removal makes a real difference, for others the research shows no meaningful advantage over ablation. What almost never comes up before surgery is that roughly one in five women needs a repeat procedure within two years, regardless of which technique was used. That's not a reason to avoid surgery. It's a reason to ask better questions before you agree to it.</p>
       </div>
       <div class="ex-divider"></div>
       <p class="ex-section-label">What the research found</p>
@@ -688,7 +684,7 @@
         <span class="ex-source">FemSource</span>
       </div>
       <p class="ex-question">"What's the link between perimenopause and poor sleep?"</p>
-      <h3 class="ex-headline">Progesterone decline changes the architecture of your sleep — not just how long you sleep, but how deeply</h3>
+      <h3 class="ex-headline">Progesterone decline changes the architecture of your sleep, not just how long you sleep, but how deeply</h3>
       <div class="ex-trust-box">
         <div class="ex-score-card">
           <p class="ex-score-label">Bias &amp; funding</p>
@@ -720,7 +716,7 @@
       <div class="ex-divider"></div>
       <div class="ex-why-matters">
         <p class="ex-section-label">Why this matters to you</p>
-        <p class="ex-body">When progesterone drops, your brain spends less time in slow-wave sleep — the stage that consolidates memory, regulates cortisol, and leaves you feeling genuinely rested. You can sleep eight hours and still wake up exhausted because the hours themselves are no longer the problem. This is why behavioural fixes like sleep hygiene and earlier bedtimes often fail in perimenopause: they address the surface, not the cause. The research is clear that this is hormonal, structural, and measurable. Knowing that changes the conversation you need to have with your doctor.</p>
+        <p class="ex-body">When progesterone drops, your brain spends less time in slow-wave sleep: the stage that consolidates memory, regulates cortisol, and leaves you feeling genuinely rested. You can sleep eight hours and still wake up exhausted because the hours themselves are no longer the problem. This is why behavioural fixes like sleep hygiene and earlier bedtimes often fail in perimenopause: they address the surface, not the cause. The research is clear that this is hormonal, structural, and measurable. Knowing that changes the conversation you need to have with your doctor.</p>
       </div>
       <div class="ex-divider"></div>
       <p class="ex-section-label">What the research found</p>
@@ -753,7 +749,7 @@
 <div class="bridge-section">
   <div class="wrap">
     <p class="bridge-headline">Information is the most powerful thing a woman can walk into a room with.</p>
-    <p class="bridge-body">On average, it still takes 7 to 10 years for a woman to receive an endometriosis diagnosis — a delay driven primarily by physician training gaps and systemic failures. FemSource exists to give every woman the research-backed evidence to advocate for herself, and get the care she deserves.</p>
+    <p class="bridge-body">On average, it still takes 7 to 10 years for a woman to receive an endometriosis diagnosis, a delay driven primarily by physician training gaps and systemic failures. FemSource exists to give every woman the research-backed evidence to advocate for herself, and get the care she deserves.</p>
   </div>
 </div>
 
@@ -786,15 +782,14 @@
             <div class="form-heading">Ready to join?</div>
             <div class="form-subheading">Free. Takes 60 seconds. Shapes what we research first.</div>
             <button class="btn btn-teal" onclick="showWaitlistForm()" style="width:100%;justify-content:center;margin-top:1.25rem;">
-              Join the waitlist — it's free
+              Join the waitlist
             </button>
             <p class="form-fine-print">No spam. No price. Just the research.</p>
             <div class="waitlist-alt">
-              <span class="waitlist-alt-label">Or</span>
-              <a class="waitlist-alt-link" href="#founding-section">
-                Help fund the build <span class="arrow">→</span>
+              <a class="btn-outline-founding" href="#founding-section">
+                Become a Founding Member
               </a>
-              <span class="waitlist-alt-sub">Become a Founding Member — $49, one time</span>
+              <p class="waitlist-alt-sub">$49, one time. Limited to 500 members.</p>
             </div>
           </div>
           <div id="waitlist-form-wrap" style="display:none;">
@@ -866,7 +861,7 @@
           <div class="waitlist-success" id="waitlist-success" style="display:none;">
             <div class="success-icon">&#10003;</div>
             <div class="success-heading">You're on the list.</div>
-            <p class="success-text">We'll be in touch when FemSource launches — and your question goes straight to the top of our research queue.</p>
+            <p class="success-text">We'll be in touch when FemSource launches. Your question goes straight to the top of our research queue.</p>
           </div>
         </div>
       </div>
@@ -878,11 +873,11 @@
 <section class="founding-section" id="founding-section">
   <div class="wrap">
     <span class="label">Support the build</span>
-    <p class="founding-intro">FemSource is free. <em>Always.</em> But building the research library takes resources. Founding Members fund it — and shape what we research first.</p>
+    <p class="founding-intro">FemSource is always free. Building the first research library takes real resources. Founding Members fund the research directly, and their questions go in first.</p>
     <div class="founding-card">
       <div class="founding-eyebrow">Limited to first 500 supporters</div>
       <h3>Become a Founding Member</h3>
-      <p class="founding-subhead">$49, one time. Help us build the first research library — and shape what goes in it.</p>
+      <p class="founding-subhead">$49, one time. Help build the first research library and shape what goes in it.</p>
       <hr class="founding-divider" />
       <p class="founding-body">FemSource will always be free. Founding Members fund the research we prioritize first, and their questions become the literature we translate from day one.</p>
       <ul class="founding-perks">
@@ -904,7 +899,7 @@
           href="https://buy.stripe.com/5kQcN476s8SnbGJ01P6kg00"
           id="founding-cta-btn"
           onclick="trackFoundingMemberClick()"
-        >Become a Founding Member — $49</a>
+        >Become a Founding Member</a>
         <p class="founding-fine-print">One-time payment via Stripe. Limited to 500 members.</p>
       </div>
       <!-- COUNTER: Update the first number below manually as spots are claimed. -->
