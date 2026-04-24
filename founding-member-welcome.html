@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome, Founding Member — FemSource</title>
+  <meta name="description" content="You're a FemSource Founding Member. Tell us what to research first." />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Figtree', sans-serif;
+      background: #F8F4EE;
+      color: #1A1916;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    :root {
+      --purple:       #5C3D8F;
+      --purple-dark:  #3D1F5C;
+      --purple-mid:   #7B5AAF;
+      --purple-pale:  #C4B0E0;
+      --purple-bg:    #EEE8F7;
+      --sage:         #4A7C6A;
+      --sage-bg:      #E8F4EF;
+      --parchment:    #F8F4EE;
+      --parchment-card: #FDFAF5;
+      --parchment-2:  #F0EAE0;
+      --ink:          #1A1916;
+      --ink-mid:      #4A4640;
+      --ink-muted:    #6B6660;
+      --ink-faint:    #A09C96;
+      --border:       rgba(26,25,22,0.08);
+      --border-mid:   rgba(26,25,22,0.13);
+    }
+
+    h1, h2 { font-family: 'Cormorant Garamond', serif; letter-spacing: -0.01em; line-height: 1.1; font-weight: 500; }
+
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,247,242,0.92); backdrop-filter: blur(14px);
+      border-bottom: 0.5px solid var(--border);
+      padding: 0.9rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: var(--purple); text-decoration: none; letter-spacing: -0.01em; }
+    .nav-logo span { font-weight: 400; }
+
+    /* ── WELCOME HEADER ── */
+    .welcome-header {
+      background: var(--parchment);
+      padding: 5rem 0 3.5rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .welcome-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--purple-bg); border: 0.5px solid rgba(166,123,143,0.25);
+      color: var(--purple-dark); border-radius: 100px;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 0.35rem 0.9rem; margin-bottom: 1.5rem;
+      font-family: 'Figtree', sans-serif;
+    }
+    .welcome-header h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 1rem; color: var(--ink); }
+    .welcome-header h1 em { font-style: italic; color: var(--purple-mid); }
+    .welcome-lede {
+      font-size: 1rem; line-height: 1.82; color: var(--ink-muted);
+      max-width: 540px; font-weight: 300;
+    }
+
+    /* ── FORM SECTION ── */
+    .form-section { padding: 3.5rem 0 5rem; }
+
+    .form-card {
+      background: var(--parchment-card);
+      border: 0.5px solid var(--border-mid);
+      border-radius: 20px;
+      padding: 2.25rem;
+    }
+    .form-section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 500; color: var(--ink);
+      margin-bottom: 0.35rem; letter-spacing: -0.01em;
+    }
+    .form-section-sub {
+      font-size: 0.82rem; color: var(--ink-faint); margin-bottom: 1.75rem;
+      font-family: 'Figtree', sans-serif;
+    }
+
+    .field-group { margin-bottom: 1.25rem; }
+    .field-label { display: block; font-size: 0.8rem; font-weight: 500; color: var(--ink-mid); margin-bottom: 0.4rem; font-family: 'Figtree', sans-serif; }
+    .required { color: var(--purple-mid); }
+    .field-input {
+      width: 100%; font-family: 'Figtree', sans-serif; font-size: 0.85rem;
+      color: var(--ink); background: var(--parchment); border: 0.5px solid var(--border-mid);
+      border-radius: 10px; padding: 0.65rem 0.9rem; outline: none; transition: border-color 0.15s;
+    }
+    .field-input:focus { border-color: var(--purple-mid); }
+    .field-textarea { resize: vertical; min-height: 90px; line-height: 1.55; }
+
+    .topic-checkboxes { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.4rem; }
+    .topic-check {
+      display: flex; align-items: center; gap: 0.4rem;
+      background: var(--parchment); border: 0.5px solid var(--border-mid);
+      border-radius: 100px; padding: 0.3rem 0.7rem;
+      font-size: 0.75rem; color: var(--ink-muted); cursor: pointer;
+      transition: all 0.15s; font-family: 'Figtree', sans-serif;
+    }
+    .topic-check:has(input:checked) { background: var(--purple-bg); border-color: rgba(166,123,143,0.3); color: var(--purple-dark); }
+    .topic-check input { accent-color: var(--purple); width: 12px; height: 12px; }
+
+    .btn-submit {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 100%; background: var(--purple); color: #fff;
+      padding: 0.85rem 1.9rem; font-size: 0.92rem; border-radius: 100px;
+      font-family: 'Figtree', sans-serif; font-weight: 500; cursor: pointer;
+      border: none; transition: all 0.18s ease; margin-top: 0.5rem;
+    }
+    .btn-submit:hover { background: var(--purple-dark); transform: translateY(-1px); }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .form-fine-print {
+      font-size: 0.71rem; color: var(--ink-faint); text-align: center;
+      margin-top: 0.75rem; font-family: 'Figtree', sans-serif;
+    }
+
+    /* ── SUCCESS STATE ── */
+    .form-success {
+      display: none;
+      background: var(--purple-bg); border: 0.5px solid var(--purple-pale);
+      border-radius: 20px; padding: 3rem 2rem; text-align: center;
+    }
+    .success-icon {
+      width: 48px; height: 48px; background: var(--purple); color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; margin: 0 auto 1rem;
+    }
+    .success-heading {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
+      font-weight: 500; color: var(--purple); margin-bottom: 0.75rem;
+    }
+    .success-text {
+      font-size: 0.88rem; line-height: 1.7; color: var(--purple-mid);
+      font-weight: 300; font-family: 'Figtree', sans-serif;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 0.5px solid var(--border); padding: 1.5rem;
+      display: flex; align-items: flex-start; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem; background: var(--parchment-card);
+    }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--purple); font-weight: 700; }
+    .footer-logo span { font-weight: 400; }
+    .footer-disclaimer { font-size: 0.68rem; color: var(--ink-faint); max-width: 560px; line-height: 1.6; font-family: 'Figtree', sans-serif; }
+
+    @media (max-width: 600px) {
+      .welcome-header { padding: 3.5rem 0 2.5rem; }
+      .form-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">Fem<span>Source</span></a>
+</nav>
+
+<!-- WELCOME HEADER -->
+<div class="welcome-header">
+  <div class="wrap">
+    <div class="welcome-badge">Founding Member</div>
+    <h1>Welcome, <em>Founding Member.</em></h1>
+    <p class="welcome-lede">Thank you. Your support directly funds the first research library — and your input shapes what goes in it. We'll be in touch as we build. In the meantime, tell us what matters most to you.</p>
+  </div>
+</div>
+
+<!-- FOLLOW-UP FORM -->
+<section class="form-section">
+  <div class="wrap">
+    <div class="form-card" id="fm-form-card">
+      <div class="form-section-heading">Help us build what you need.</div>
+      <div class="form-section-sub">Your answers go directly into our research roadmap.</div>
+
+      <div class="field-group">
+        <label class="field-label" for="fm-name">Your name <span class="required">*</span></label>
+        <input class="field-input" type="text" id="fm-name" placeholder="First name is fine" required />
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="fm-question">What condition or health question do you most want FemSource to prioritize first?</label>
+        <textarea class="field-input field-textarea" id="fm-question" placeholder="e.g. I want to understand what the research actually says about HRT and long-term risk..." rows="4"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Which topics should we cover in the first research library?</label>
+        <div class="topic-checkboxes">
+          <label class="topic-check"><input type="checkbox" value="perimenopause" /> Perimenopause</label>
+          <label class="topic-check"><input type="checkbox" value="pcos" /> PCOS</label>
+          <label class="topic-check"><input type="checkbox" value="endometriosis" /> Endometriosis</label>
+          <label class="topic-check"><input type="checkbox" value="hormones" /> Hormones</label>
+          <label class="topic-check"><input type="checkbox" value="fertility" /> Fertility</label>
+          <label class="topic-check"><input type="checkbox" value="sleep" /> Sleep</label>
+          <label class="topic-check"><input type="checkbox" value="nutrition" /> Nutrition</label>
+          <label class="topic-check"><input type="checkbox" value="mental-health" /> Mental health</label>
+          <label class="topic-check"><input type="checkbox" value="bone-health" /> Bone health</label>
+          <label class="topic-check"><input type="checkbox" value="cardiovascular" /> Cardiovascular</label>
+          <label class="topic-check"><input type="checkbox" value="alzheimers" /> Alzheimer's prevention</label>
+          <label class="topic-check"><input type="checkbox" value="breast-cancer" /> Breast cancer</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="fm-notes">Anything else we should know? <span style="color:var(--ink-faint);font-weight:300;">(optional)</span></label>
+        <textarea class="field-input field-textarea" id="fm-notes" placeholder="Anything else you'd like us to know as we build..." rows="3"></textarea>
+      </div>
+
+      <button class="btn-submit" id="fm-submit-btn" onclick="handleFoundingMemberSubmit(event)">
+        Submit
+      </button>
+      <p class="form-fine-print">Your input goes straight to the research roadmap.</p>
+    </div>
+
+    <div class="form-success" id="fm-success">
+      <div class="success-icon">&#10003;</div>
+      <div class="success-heading">Thank you.</div>
+      <p class="success-text">Your input is now part of our research roadmap.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Fem<span>Source</span></div>
+  <p class="footer-disclaimer">FemSource is a general wellness information service, not a medical device. Content is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider regarding your individual health circumstances.</p>
+</footer>
+
+<script>
+  function handleFoundingMemberSubmit(e) {
+    e.preventDefault();
+
+    var name = document.getElementById('fm-name').value.trim();
+    if (!name) {
+      document.getElementById('fm-name').style.borderColor = '#C94040';
+      document.getElementById('fm-name').focus();
+      return;
+    }
+
+    var btn = document.getElementById('fm-submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    var topics = [];
+    document.querySelectorAll('.topic-check input:checked').forEach(function(cb) {
+      topics.push(cb.value);
+    });
+
+    var payload = {
+      name: name,
+      health_question: document.getElementById('fm-question').value.trim(),
+      topics: topics,
+      notes: document.getElementById('fm-notes').value.trim()
+    };
+
+    fetch('/.netlify/functions/founding-member', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (data.success) {
+        // TODO: Wire up analytics event when a tool is added — e.g.:
+        //   gtag('event', 'founding_member_form_submit', { event_category: 'engagement' });
+        document.getElementById('fm-form-card').style.display = 'none';
+        document.getElementById('fm-success').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Submit';
+        alert('Something went wrong. Please try again.');
+      }
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Submit';
+      alert('Something went wrong. Please try again.');
+    });
+  }
+</script>
+
+</body>
+</html>

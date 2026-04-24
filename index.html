@@ -378,6 +378,25 @@
   .ex-tab:hover:not(.active) { border-color:var(--purple-pale); color:var(--purple); }
   .ex-question { font-family:'Cormorant Garamond',serif; font-size:1rem; font-style:italic; color:var(--ink-muted); margin:0 0 0.75rem; font-weight:400; }
 
+  /* ── FOUNDING MEMBER ── */
+  .founding-section { background: var(--parchment); border-top: 0.5px solid var(--border); }
+  .founding-intro { font-size: 0.92rem; line-height: 1.78; color: var(--ink-muted); font-weight: 300; max-width: 520px; margin-top: 0.25rem; font-family: 'Figtree', sans-serif; }
+  .founding-intro em { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+  .founding-card { background: var(--parchment-card); border: 0.5px solid var(--border-mid); border-radius: 20px; padding: 2.5rem; max-width: 600px; margin: 2.5rem auto 0; }
+  .founding-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; }
+  .founding-card h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; letter-spacing: -0.01em; line-height: 1.2; }
+  .founding-subhead { font-size: 0.92rem; color: var(--ink-mid); font-weight: 400; font-family: 'Figtree', sans-serif; line-height: 1.6; }
+  .founding-divider { border: none; border-top: 0.5px solid var(--border); margin: 1.25rem 0; }
+  .founding-body { font-size: 0.88rem; line-height: 1.78; color: var(--ink-muted); font-weight: 300; font-family: 'Figtree', sans-serif; margin-bottom: 1.5rem; }
+  .founding-perks { list-style: none; padding: 0; margin: 0 0 1.75rem; display: flex; flex-direction: column; gap: 0.65rem; }
+  .founding-perks li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.85rem; line-height: 1.6; color: var(--ink-mid); font-family: 'Figtree', sans-serif; font-weight: 300; }
+  .founding-perk-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--purple-pale); flex-shrink: 0; margin-top: 0.5em; }
+  .founding-cta-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .btn-founding { display: inline-flex; align-items: center; background: var(--purple-dark); color: #fff; padding: 0.85rem 1.9rem; font-size: 0.92rem; border-radius: 100px; font-family: 'Figtree', sans-serif; font-weight: 500; cursor: pointer; text-decoration: none; border: none; transition: all 0.18s ease; white-space: nowrap; }
+  .btn-founding:hover { background: #2D1545; transform: translateY(-1px); }
+  .founding-fine-print { font-size: 0.71rem; color: var(--ink-faint); font-family: 'Figtree', sans-serif; }
+  .founding-counter { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--ink-faint); margin-top: 1.5rem; padding-top: 1.25rem; border-top: 0.5px solid var(--border); }
+
   </style>
 </head>
 <body>
@@ -839,6 +858,45 @@
   </div>
 </section>
 
+<!-- FOUNDING MEMBER -->
+<section class="founding-section">
+  <div class="wrap">
+    <span class="label">Support the build</span>
+    <p class="founding-intro">FemSource is free. <em>Always.</em> But building the research library takes resources. Founding Members fund it — and shape what we research first.</p>
+    <div class="founding-card">
+      <div class="founding-eyebrow">Limited to first 500 supporters</div>
+      <h3>Become a Founding Member</h3>
+      <p class="founding-subhead">$49, one time. Help us build the first research library — and shape what goes in it.</p>
+      <hr class="founding-divider" />
+      <p class="founding-body">FemSource will always be free. Founding Members fund the research we prioritize first, and their questions become the literature we translate from day one.</p>
+      <ul class="founding-perks">
+        <li><span class="founding-perk-dot"></span>Your health questions prioritized in our first research library</li>
+        <li><span class="founding-perk-dot"></span>Direct input on which conditions we cover first</li>
+        <li><span class="founding-perk-dot"></span>Early access 30 days before public launch</li>
+      </ul>
+      <div class="founding-cta-wrap">
+        <!--
+          STRIPE PAYMENT LINK — ACTION REQUIRED:
+          1. Go to your Stripe dashboard → Payment Links → Create a new link priced at $49.
+          2. In the Payment Link settings, set the confirmation page / success redirect to:
+             https://yourdomain.com/founding-member-welcome
+          3. Copy the Payment Link URL (e.g. https://buy.stripe.com/XXXXXXXXXX).
+          4. Replace the href value below with your copied URL.
+        -->
+        <a
+          class="btn-founding"
+          href="https://buy.stripe.com/5kQcN476s8SnbGJ01P6kg00"
+          id="founding-cta-btn"
+          onclick="trackFoundingMemberClick()"
+        >Become a Founding Member — $49</a>
+        <p class="founding-fine-print">One-time payment via Stripe. Limited to 500 members.</p>
+      </div>
+      <!-- COUNTER: Update the first number below manually as spots are claimed. -->
+      <div class="founding-counter">0 of 500 spots claimed.</div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Fem<span>Source</span></div>
@@ -990,6 +1048,13 @@
   function sliderPrev() { sliderGoTo(sliderCurrent - 1); }
 
   sliderGoTo(0);
+
+  function trackFoundingMemberClick() {
+    // No analytics tool is currently configured on this site.
+    // TODO: Wire up event tracking when a tool is added — e.g.:
+    //   gtag('event', 'founding_member_cta_click', { event_category: 'engagement' });
+    //   analytics.track('Founding Member CTA Clicked');
+  }
 </script>
 
 </body>
