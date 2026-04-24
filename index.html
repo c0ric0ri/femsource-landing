@@ -378,6 +378,15 @@
   .ex-tab:hover:not(.active) { border-color:var(--purple-pale); color:var(--purple); }
   .ex-question { font-family:'Cormorant Garamond',serif; font-size:1rem; font-style:italic; color:var(--ink-muted); margin:0 0 0.75rem; font-weight:400; }
 
+  /* ── WAITLIST → FOUNDING MEMBER BRIDGE ── */
+  .waitlist-alt { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 0.5px solid var(--border); text-align: center; }
+  .waitlist-alt-label { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.5rem; }
+  .waitlist-alt-link { display: inline-flex; align-items: center; gap: 0.35rem; font-family: 'Figtree', sans-serif; font-size: 0.85rem; color: var(--purple); font-weight: 500; text-decoration: none; transition: color 0.15s; }
+  .waitlist-alt-link:hover { color: var(--purple-dark); }
+  .waitlist-alt-link .arrow { transition: transform 0.18s ease; }
+  .waitlist-alt-link:hover .arrow { transform: translateX(3px); }
+  .waitlist-alt-sub { display: block; font-size: 0.72rem; color: var(--ink-faint); font-weight: 300; margin-top: 0.3rem; font-family: 'Figtree', sans-serif; }
+
   /* ── FOUNDING MEMBER ── */
   .founding-section { background: var(--parchment); border-top: 0.5px solid var(--border); }
   .founding-intro { font-size: 0.92rem; line-height: 1.78; color: var(--ink-muted); font-weight: 300; max-width: 520px; margin-top: 0.25rem; font-family: 'Figtree', sans-serif; }
@@ -780,6 +789,13 @@
               Join the waitlist — it's free
             </button>
             <p class="form-fine-print">No spam. No price. Just the research.</p>
+            <div class="waitlist-alt">
+              <span class="waitlist-alt-label">Or</span>
+              <a class="waitlist-alt-link" href="#founding-section">
+                Help fund the build <span class="arrow">→</span>
+              </a>
+              <span class="waitlist-alt-sub">Become a Founding Member — $49, one time</span>
+            </div>
           </div>
           <div id="waitlist-form-wrap" style="display:none;">
             <!--
@@ -859,7 +875,7 @@
 </section>
 
 <!-- FOUNDING MEMBER -->
-<section class="founding-section">
+<section class="founding-section" id="founding-section">
   <div class="wrap">
     <span class="label">Support the build</span>
     <p class="founding-intro">FemSource is free. <em>Always.</em> But building the research library takes resources. Founding Members fund it — and shape what we research first.</p>
